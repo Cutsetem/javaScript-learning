@@ -1,29 +1,32 @@
-function getAverage(scores) {
-    let sum = 0;
-  
-    for (const score of scores) {
-      sum += score;
-    }
-  
-    return sum / scores.length;
-  }
-  
-  function getGrade(score) {
-    if (score === 100) {
-      return "A++";
-    } else if (score >= 90) {
-      return "A";
-    } else if (score >= 80) {
-      return "B";
-    } else if (score >= 70) {
-      return "C";
-    } else if (score >= 60) {
-      return "D";
-    } else {
-      return "F";
-    }
-  }
-  
-  function hasPassingGrade(score) {
-    return getGrade(score) !== "F";
-  }
+const readline = require("readline");
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+
+
+function perguntar() {
+    rl.question("Digite um número: \n(para finalizar o programa digite 'sair'.)", (number) => {
+    console.log(number);
+    let num = parseInt(number);
+    if(number == "sair"){
+        parar();
+    }else if(isNaN(num)) {
+        console.log("O dado inserido pelo usuário não é válido!");
+    }else if(num % 2 === 0) {
+        console.log(num, "é par.")
+    }else {
+        console.log(num, "é ímpar.")
+    };
+    perguntar();
+});
+};
+
+perguntar();
+
+function parar() {
+    rl.close();
+    console.log("Programa finalizado!");
+    process.exit(0);
+};
