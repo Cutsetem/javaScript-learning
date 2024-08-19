@@ -1,0 +1,29 @@
+body {
+    background-color: bisque;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+}
